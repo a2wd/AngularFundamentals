@@ -75,3 +75,11 @@ select, textarea {
     left: 209px;
     background-color: #272b30;
 }
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none;
+}
+
+.blue {
+  color: blue;
+}
