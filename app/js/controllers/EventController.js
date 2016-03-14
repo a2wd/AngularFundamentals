@@ -1,13 +1,13 @@
 "use strict";
 
-eventsApp.controller("EventController", function($scope, eventData){
+eventsApp.controller("EventController", function($scope, $log, eventData){
   $scope.sortorder = "-upVoteCount"
-  $scope.snippet = "<span style='color: red'>Hi there</span>"
-  $scope.myStyle = {color: "red"}
-  $scope.myClass = "blue"
-  $scope.boolValue = true
-  $scope.buttonDisabled = true
-  $scope.event = eventData.event
+
+  eventData.getEvent()
+    .success(function(event) { $scope.event = event })
+    .error(function(data, status, headers, config){
+      $log.warn(data, status, headers(), config)
+    })
 
   $scope.upVoteSession = function(session) {
     session.upVoteCount++
