@@ -1,17 +1,25 @@
 //Node Webserver
 var express = require("express")
 var path = require("path")
-var events = require("./eventsController.js")
 var app = express()
-var rootPath = path.normalize(__dirname + "/../")
 var bodyParser = require("body-parser")
+var rootPath = path.normalize(__dirname + "/../")
 
+//User includes
+var events = require("./eventsController.js")
+var users = require("./userController.js")
+
+//Config
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 app.use(express.static(rootPath + "/app"))
 
+//Routes
+app.get("/data/event/count", events.count)
 app.get("/data/event/:id", events.get)
 app.post("/data/event/:id", events.save)
+app.post("/data/user/:userName", users.save)
 
+//Startup server
 app.listen(8000)
 console.log("Listening on 8000")
