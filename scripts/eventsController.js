@@ -23,3 +23,26 @@ module.exports.count = function(req, res) {
     res.send({count: files.length})
   })
 }
+
+module.exports.getAll = function(req, res) {
+  var files = []
+  try {
+    files = fs.readdirSync(path)
+  }
+  catch(e) {
+    res.send("[]")
+    res.end()
+  }
+
+  var results = "["
+  for(var i = 0; i < files.length; i++) {
+    if(files[i].indexOf(".json") === files[i].length - 5) {
+      results += fs.readFileSync(path + "/" + files[i]) + ","
+    }
+  }
+  results = results.substr(0, results.length - 1) + "]"
+
+  res.setHeader("Content-Type", "application/json")
+  res.send(results)
+  res.end()
+}
