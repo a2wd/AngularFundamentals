@@ -12,8 +12,4 @@ eventsApp.controller("EventController", function($scope, $routeParams, $route, e
   $scope.downVoteSession = function(session) {
     session.upVoteCount--
   }
-
-  function cookieId(session) {
-    return session.id + "-upvote"
-  }
 })
