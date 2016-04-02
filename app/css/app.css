@@ -29,12 +29,6 @@ select, textarea {
   cursor:pointer;
 }
 
-.sessionThumbnail {
-    height:100%;
-    overflow: hidden;
-}
-
-
 .calendar{
     border: 1px solid #555;
     width: 238px;
@@ -74,12 +68,4 @@ select, textarea {
     top: -7px;
     left: 209px;
     background-color: #272b30;
-}
-
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none;
-}
-
-.blue {
-  color: blue;
 }

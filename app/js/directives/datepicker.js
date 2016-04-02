@@ -1,4 +1,3 @@
-
 'use strict';
 
 eventsApp.directive('datePicker', function () {
