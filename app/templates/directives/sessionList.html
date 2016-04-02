@@ -1,0 +1,21 @@
+<ul class="thumbnails">
+  <li ng-repeat="session in event.sessions | orderBy:sortorder | limitTo:3 | filter:query" id="session{{session.id}}">
+    <div class="row session">
+      <div class="span0 well votingWidget">
+        <upvote upvote="upVoteSession(session)" downvote="downVoteSession(session)" count="session.upVoteCount"/>
+      </div>
+
+      <div class="well span9">
+        <collapsible title="{{session.name}}" ng-click="toggleVisibility()">
+          <h4 class="well-title">{{session.name}}</h4>
+          <h6 style="margin-top: -10px">{{session.creatorName}}</h6>
+          <span>Duration: {{session.duration | durations}}</span></br />
+          <span>Level: {{session.level}}</span></br />
+          <p>{{session.astract}}</p>
+        </collapsible>
+
+        <p>{{session.abstract}}
+        </div>
+      </div>
+    </li>
+  </ul>
