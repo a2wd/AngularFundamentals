@@ -6,7 +6,7 @@
     <form name="newEventForm">
       <fieldset>
         <label for="eventName">Event Name:</label>
-        <input id="eventName" type="text" required ng-model="event.name" placeholder="Name of your event..." />
+        <input id="eventName" focus type="text" required ng-model="event.name" placeholder="Name of your event..." />
         <label for="eventDate">Event Date:</label>
         <div style="position:relative;">
           <input id="eventDate" type="text" date-keys required ng-pattern="/\d\d/\d\d/\d\d\d\d/" ng-model="event.date" placeholder="format (mm/dd/yyyy)..." />
