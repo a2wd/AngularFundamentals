@@ -3,7 +3,7 @@
     <h1 ng-hide="editingEvent">New Event</h1>
     <h1 ng-show="editingEvent">New Event</h1>
     <hr />
-    <form name="newEventForm">
+    <form name="newEventForm" trigger-on-return>
       <fieldset>
         <label for="eventName">Event Name:</label>
         <input id="eventName" focus type="text" required ng-model="event.name" placeholder="Name of your event..." />
