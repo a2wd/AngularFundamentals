@@ -1,3 +1,3 @@
-eventsApp.controller("EventsListController", function($scope, $location, eventData){
-  $scope.events = eventData.getAllEvents()  
+eventsApp.controller("EventsListController", function($scope, eventData){
+  $scope.events = eventData.getAllEvents()
 })
